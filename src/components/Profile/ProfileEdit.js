@@ -1,7 +1,6 @@
 import React from 'react'
 import {Link, Redirect} from 'react-router-dom'
 import UserService from "../../services/UserService";
-import Header from "../Header/Header";
 import pp from './img/avator.png'
 
 

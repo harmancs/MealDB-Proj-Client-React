@@ -2,7 +2,7 @@ import React from 'react'
 import {Link, Redirect} from 'react-router-dom'
 import './Register.style.css';
 import UserService from "../../services/UserService";
-import Header from "../Search/Search";
+//import Header from "../Search/Search";
 
 class register extends React.Component{
 

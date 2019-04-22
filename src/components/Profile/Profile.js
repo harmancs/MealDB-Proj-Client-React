@@ -20,6 +20,9 @@ export default class Profile extends React.Component{
             redirect:false,
             user:null,
             sameUser:false
+            //role
+            //firstName
+            //lastName
         }
     }
 
