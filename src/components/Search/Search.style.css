@@ -1,0 +1,31 @@
+.filter-option{
+    border-radius: 5px;
+    font-size: 13px;
+    padding:5px;
+    cursor: pointer;
+    background-color: gainsboro;
+
+}
+
+.active{
+    background-color:teal;
+    color: beige;
+}
+
+.reset{
+    cursor: pointer;
+}
+
+.page{
+    background-color: gainsboro;
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    margin-right: 1px;
+    border-radius: 2px;
+    cursor: pointer;
+}
+.active-page{
+    background-color:teal;
+    color: beige;
+}

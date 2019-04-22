@@ -1,0 +1,72 @@
+.pills{
+    border: none;
+    display: inline-block;
+    padding: 8px 16px;
+    vertical-align: middle;
+    overflow: hidden;
+    text-decoration: none;
+    color: #fff;
+    background-color: #4CAF50;
+    text-align: center;
+    cursor: pointer;
+    white-space: nowrap;
+    border-radius: 4px;
+}
+
+.comment{
+    border:1px solid gainsboro;
+    border-radius: 5px;
+    padding:10px;
+}
+
+
+.comment-div{
+    background: whitesmoke !important;
+    border-radius:10px;
+    padding:30px;
+    padding-top:10px;
+    padding-bottom:20px;
+    border: 2px dashed lightblue;
+     margin-top:100px;
+}
+.comment-header{
+    font-size: 25px;
+    color:#17a2b8;
+}
+
+
+.show-comments-div{
+    color: black;
+}
+
+.single-comment-div{
+    background: rgba(0,0,0,.05) !important;
+    border-radius: 10px;
+}
+
+.commenter-img{
+    width:80px;
+    height:80px;
+}
+
+.small-italic{
+    font-style: italic;
+    font-size: 13px;
+    color: black;
+}
+
+.media-heading, .media-body > p, .media-body > span {
+    word-break: break-all;
+}
+
+.commenter-img:hover{
+    border:2px solid aliceblue;
+}
+
+.icon-position{
+    margin-top: -5px;
+}
+
+.text-infos{
+    text-color:"#000000";
+}
