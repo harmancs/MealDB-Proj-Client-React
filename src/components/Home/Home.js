@@ -11,7 +11,7 @@ export default class Home extends Component {
 
     constructor(props){
         super(props);
-        this.state={
+        this.state = {
             recipes:[],
             searchParam:"",
             redirect:false,
@@ -28,14 +28,11 @@ export default class Home extends Component {
             })
         )
         UserService.findUserInSession().then(
-            user => this.setState({
-                sessionUser:user
-            })
-        ).then(()=>RecipeService.findFavtRecipeByUserId(this.state.sessionUser.id)
-                .then(favorites=>
-                    this.setState({
-                        favorites:favorites.length>0?favorites.reverse().slice(0,6):favorites
-                    })))}
+            user => {console.log(user); this.setState({
+                sessionUser:user,
+                favorites:user.length > 0 ? user.recipes : []
+            });}
+        )}
 
 
     renderRedirect = () => {

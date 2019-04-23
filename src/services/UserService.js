@@ -1,9 +1,10 @@
+//var baseUrl = "https://webdev-proj-server.herokuapp.com/";
 var baseUrl = "http://localhost:8080/";
 
 export default class UserService {
 
     static registerUser = user =>{
-        const url=baseUrl+"api/register/";
+        const url=baseUrl+"api/user/";
         return fetch(url,{
             method: 'POST',
             credentials: 'include',
@@ -12,6 +13,9 @@ export default class UserService {
                 'Content-Type': 'application/json'
             }
         }).then(response =>response.json())
+            .catch((error) => {
+                throw error;
+            });
     }
 
     static login = user =>{
@@ -56,7 +60,7 @@ export default class UserService {
     }
 
     static findUserInSession =() => {
-        const url=baseUrl+"api/user";
+        const url=baseUrl+"api/sessionUser";
         return fetch(url,{
             credentials: 'include'
         }).then((res) => res.text())

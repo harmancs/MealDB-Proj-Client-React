@@ -15,7 +15,8 @@ class register extends React.Component{
             password:"",
             repeatPassword:"",
             sessionUser:null,
-            redirect:false
+            redirect:false,
+            role:""
         }
     }
 
@@ -111,6 +112,18 @@ class register extends React.Component{
                        aria-label="VerifyPassword">
                 </input>
             </form>
+                <form className="form-group form-inline">
+                    <label htmlFor="role" className="col-sm-10 offset-1 col-form-label">Select Role</label>
+                    <select className="col-sm-10 offset-1 col-form-label"
+                            value={this.state.role}
+                            name="role"
+                            onChange={this.handleInputChange}
+                            type="role">
+                        <option value="MODERATOR">Moderator</option>
+                        <option value="FOODIE">Foodie</option>
+                        <option value="ADMIN">Admin</option>
+                    </select>
+                </form>
             <div className="">
                 <button type="submit"
                         className="btn btn-dark btn-block "

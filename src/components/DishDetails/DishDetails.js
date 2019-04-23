@@ -31,25 +31,41 @@ export default class DishDetails extends Component{
                     UserService.findUserInSession().then(
                         user => this.setState({
                             sessionUser: user
-                        },()=>{
-                            recipeService.getLike(this.state.dish.id,this.state.sessionUser.id)
-                                .then(liked=>
+                        },()=> {
+                            if(this.sessionUser != null ){
+                                if (this.sessionUser.hasOwnProperty("recipes")) {
+                                    if (this.sessionUser.recipes.includes(this.state.dish.id)) {
+                                        this.setState({
+                                            liked: true
+                                        })
+                                    } else {
+                                        this.setState({
+                                            liked: false
+                                        })
+                                    }
+                                }
+                                else {
                                     this.setState({
-                                        liked:liked
+                                        liked: false
                                     })
-                                )
-                            recipeService.findRecipeById(this.state.dish.id)
-                                .then(data => (data.comments===undefined) ?
-                                    {}:
-
+                                }
+                            }
+                                    else {
                                     this.setState({
+                                        liked: false
+                                    })
+                                }
+                                    recipeService.findRecipeById(this.state.dish.id)
+                                        .then(data => (data.comments === undefined) ?
+                                            {} :
 
-                                         comment:data.comments.reverse()
-                                     })
-                                )
-                        }
+                                            this.setState({
+
+                                                comment: data.comments.reverse()
+                                            })
+                                        )
+                                }
                         ))}))}
-
 
     createElements(n){
         var i;
@@ -62,7 +78,7 @@ export default class DishDetails extends Component{
 
     addToFavorite=()=> {
         var recipe = {
-            recipeId: this.state.dish.id,
+            recipeId: this.state.dish._id,
             recipeName: this.state.dish.name,
             creator:this.state.dish.source.sourceDisplayName,
             image:this.state.dish.images[0].hostedLargeUrl

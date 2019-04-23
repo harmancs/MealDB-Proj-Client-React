@@ -1,6 +1,7 @@
 import React from 'react'
 import {Link, Redirect} from 'react-router-dom'
 import RecipeService from "../../services/RecipeService";
+import UserService from "../../services/UserService";
 import recipeImg from "../ResultCard/img/recipe1.jpg";
 import './Favorite.style.css';
 import Favorite from "./Favorite";
@@ -15,10 +16,10 @@ export default class FavoriteList extends React.Component{
     }
 
     findFavtRecipe(id){
-        RecipeService.findFavtRecipeByUserId(id)
-            .then(favorites=>
+        UserService.findUserById(id)
+            .then(user=>
                 this.setState({
-                    favorites:favorites
+                    favorites:user.recipes
                 })
 
             )

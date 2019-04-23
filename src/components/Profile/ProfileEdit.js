@@ -23,7 +23,7 @@ class profile extends React.Component{
         UserService.findUserInSession().then(
             user => this.setState({
                 sessionUser:user,
-                userId: user.id,
+                userId: user._id,
                 username: user.username,
                 password: user.password,
                 email:user.email,

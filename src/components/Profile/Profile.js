@@ -1,6 +1,5 @@
 import React from 'react'
 import UserService from "../../services/UserService";
-import Header from "../Header/Header";
 import FavoriteList from "../Favorites/FavoriteList";
 import './Profile.style.css';
 import pp from './img/avator.png'
@@ -51,7 +50,6 @@ export default class Profile extends React.Component{
                 }))
         }
      }
-
 
     render(){
         return(

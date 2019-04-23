@@ -8,6 +8,7 @@ import Register from "../components/Register/Register";
 import Profile from "../components/Profile/Profile";
 import ProfileEdit from "../components/Profile/ProfileEdit";
 import UserService from "../services/UserService";
+import Admin from "../components/Admin/Admin"
 import Header from "../components/Header/Header.js"
 
 
@@ -41,6 +42,7 @@ class MealDB extends React.Component {
                     <Route exact path="/home" render={props => <Home user={this.state.sessionUser} />} />
                     <Route exact path="/login" component={SignIn} />
                     <Route exact path="/register" component={Register} />
+                    <Route exact path="/admin" component={Admin} />
                     <Route exact path="/search" render={props => <Search {...props} />}/>
                     <Route path="/search/:searchCriteria?/:course?/:page?" render={props => <Search {...props} />}/>
                     <Route path="/:dishId/view" render={props => <DishDetails {...props} />}/>

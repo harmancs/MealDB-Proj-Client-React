@@ -9,10 +9,10 @@ class signin extends React.Component{
         super(props);
 
         this.state = {
-            username:"",
-            password:"",
-            sessionUser:null,
-            redirect:false,
+            username: "",
+            password: "",
+            sessionUser: null,
+            redirect: false,
             invalid:false
         }
     }
